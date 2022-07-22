@@ -40,6 +40,7 @@ $searchButton.addEventListener('click', async (e) => {
     renderCaptionResult(formatedCaption);    
   } catch (error) {
     toggleErrorMessage(true);
+    console.log(error)
   }
 });
 
