@@ -5,6 +5,7 @@ function stop (event) {
 const $searchInput = document.querySelector('.search-bar__input');
 const $searchButton = document.querySelector('.search-bar__button');
 const $error = document.querySelector('.error');
+const $loading = document.querySelector('.loading');
 
 const $clipboard = document.querySelector('.clipboard');
 
@@ -25,6 +26,9 @@ $searchInput.addEventListener('keydown', (e) => {
 
 $searchButton.addEventListener('click', async (e) => {
   stop(e);
+
+  $captionResult.style.display = "none";
+  $loading.style.display = "block";
 
   toggleErrorMessage(false);
   
@@ -96,14 +100,8 @@ function processCaption (rawCaption) {
 function renderCaptionResult (formatedCaption) {
   $captionResultText.innerHTML = formatedCaption;
 
-  $captionResult.animate([
-    { opacity: 0 },
-    { opacity: 1 }
-  ],
-  {
-    duration: 200,
-    fill: 'forwards' 
-  })
+  $loading.style.display = "none";
+  $captionResult.style.display = "flex";
 }
 
 function renderVideoInfo (videoInfo) {

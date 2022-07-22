@@ -144,8 +144,15 @@ i {
   opacity: 1;
 }
 
+.app .loading {
+  width: 40px;
+  height: 40px;
+
+  display: none;
+}
+
 .caption-result {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   gap: 12px;
@@ -154,6 +161,12 @@ i {
   margin-top: 30px;
 
   opacity: 0;
+  animation: captionAnimation 400ms ease forwards;
+}
+
+@keyframes captionAnimation {
+  0% { opacity: 0; transform: translateY(30px) }
+  100% { opacity: 1; transform: translateY(0) }
 }
 
 .caption-result__title {
