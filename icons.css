@@ -1,0 +1,5 @@
+.clipboard-icon {
+  background: url('assets/icons/clipboard.svg') no-repeat center;
+  background-size: contain;
+  display: block;
+}
