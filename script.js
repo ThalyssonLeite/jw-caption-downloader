@@ -16,6 +16,9 @@ const $captionResultText = document.querySelector('.caption-result__text');
 
 $searchInput.addEventListener('keydown', (e) => {
   stop(e);
+
+  toggleErrorMessage(false);
+
   setTimeout(() => {
     const inputValue = $searchInput.value;
 
@@ -43,7 +46,6 @@ async function handleSearchClick (event) {
 
     const videoId = extractVideoId(jwURL);
     const languageCode = await extractLanguageCode(jwURL);
-    console.log(videoId)
     const captionURL = await getCaptionURL(videoId, languageCode);
     const rawCaption = await downloadCaption(captionURL);
     const formatedCaption = processCaption(rawCaption);
@@ -52,7 +54,6 @@ async function handleSearchClick (event) {
   } catch (error) {
     $loading.style.display = "none";
     toggleErrorMessage(true);
-    console.log(error);
   }
 }
 
@@ -84,7 +85,6 @@ async function extractLanguageCode (jwURL) {
 }
 
 function getCaptionURL (videoId, languageCode) {
-  console.log()
   return fetch(`https://b.jw-cdn.org/apis/mediator/v1/media-items/${languageCode}/${videoId}`).then((data) => data.text()).then(data => {
     const videoInfo = JSON.parse(data).media[0];
     const link = videoInfo.files.find(file => file.subtitles.url).subtitles.url;
@@ -135,7 +135,7 @@ function copyToClipboard (e) {
 }
 
 function getClipboardElementToNormalState () {
-  $clipboard.classList.remove("is-copied");
+  setTimeout(() => $clipboard.classList.remove("is-copied"), 400);
 }
 
 function toggleErrorMessage (active) {
