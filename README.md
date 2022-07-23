@@ -9,7 +9,7 @@
     <a href="#tecnologias">Tecnologias</a> •
     <a href="#features">Features</a> •
     <a href="#demo">Demo</a> •
-    <a href="#autor">Autor</a>
+    <a href="#autor">Author</a>
 </p>
 
 ---
@@ -39,6 +39,6 @@
 <img src="github/demo.gif" alt="Demonstração">
 
 ---
-### <b>Autor</b>
+### <b>Author</b>
 
 <p align="center"> Made with 🧡 and respect by Thalysson 🥛<a href="https://www.google.com/search?q=milk+in+portuguese&oq=milk+in+portuguese&aqs=chrome..69i57.4303j0j1&sourceid=chrome&ie=UTF-8">(click here if you are not brazilian)</a></p>
