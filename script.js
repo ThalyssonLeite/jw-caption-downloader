@@ -37,6 +37,7 @@ $searchButton.addEventListener('click', async (e) => {
 
     const videoId = extractVideoId(jwURL);
     const languageCode = await extractLanguageCode(jwURL);
+    console.log(videoId)
     const captionURL = await getCaptionURL(videoId, languageCode);
     const rawCaption = await downloadCaption(captionURL);
     const formatedCaption = processCaption(rawCaption);
@@ -54,29 +55,34 @@ $clipboard.addEventListener('click', copyToClipboard);
 $clipboard.addEventListener('mouseleave', getClipboardElementToNormalState);
 
 function extractVideoId (jwURL) {
-  return jwURL.split('/').pop();
+  const isFromShare = jwURL.includes("lank=");
+  
+  if (isFromShare) return jwURL.split("lank=").pop();
+  else return jwURL.split('/').pop();
 }
 
 async function extractLanguageCode (jwURL) {
   const regexToLanguageLocaleFromWebsite = /jw.org\/(.+?)\//;
-  const regexToLanguageLocaleFromApp = /locale=(.+?)\&/;
-  let languageLocale; 
+  const regexToLanguageLocaleFromShare = /locale=(.+?)\&/;
 
   try { 
-    languageLocale = jwURL.match(regexToLanguageLocaleFromWebsite)[1]; 
-  } catch(e) { 
-    languageLocale = jwURL.match(regexToLanguageLocaleFromApp)[1];
-  };
+    const languageLocaleFromWebsite = jwURL.match(regexToLanguageLocaleFromWebsite)[1]; 
 
-  const languagesCollection = await fetch(`https://b.jw-cdn.org/apis/mediator/v1/languages/E/all`)
+    const languagesCollection = await fetch(`https://b.jw-cdn.org/apis/mediator/v1/languages/E/all`)
     .then(res => res.json())
     .then(json => json.languages);
 
-  const languageCode = languagesCollection.find(language => language.locale === languageLocale).code;
-  return languageCode;
+    const languageCode = languagesCollection.find(language => language.locale === languageLocaleFromWebsite).code;
+    return languageCode;
+  } catch(e) { 
+    const languageLocaleFromShare = jwURL.match(regexToLanguageLocaleFromShare)[1];
+
+    return languageLocaleFromShare;
+  };
 }
 
 function getCaptionURL (videoId, languageCode) {
+  console.log()
   return fetch(`https://b.jw-cdn.org/apis/mediator/v1/media-items/${languageCode}/${videoId}`).then((data) => data.text()).then(data => {
     const videoInfo = JSON.parse(data).media[0];
     const link = videoInfo.files.find(file => file.subtitles.url).subtitles.url;
