@@ -147,7 +147,7 @@ function toggleErrorMessage (active) {
   else $error.classList.remove('is-active');
 }
 
-$saerchInput.addEventListener("focus", () => {
+$searchInput.addEventListener("focus", () => {
   $searchInput.onkeydown = (event) => {
     stop(event);
     
