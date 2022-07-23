@@ -9,7 +9,7 @@
     <a href="#tecnologias">Tecnologias</a> •
     <a href="#features">Features</a> •
     <a href="#demo">Demo</a> •
-    <a href="#autor">Author</a>
+    <a href="#author">Author</a>
 </p>
 
 ---
