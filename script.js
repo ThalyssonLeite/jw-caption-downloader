@@ -24,8 +24,14 @@ $searchInput.addEventListener('keydown', (e) => {
   }, 100)
 })
 
-$searchButton.addEventListener('click', async (e) => {
-  stop(e);
+$searchButton.addEventListener('click', hanldeSearchClick);
+
+$clipboard.addEventListener('click', copyToClipboard);
+
+$clipboard.addEventListener('mouseleave', getClipboardElementToNormalState);
+
+async function hanldeSearchClick (event) {
+  stop(event);
 
   $captionResult.style.display = "none";
   $loading.style.display = "block";
@@ -48,11 +54,7 @@ $searchButton.addEventListener('click', async (e) => {
     toggleErrorMessage(true);
     console.log(error);
   }
-});
-
-$clipboard.addEventListener('click', copyToClipboard);
-
-$clipboard.addEventListener('mouseleave', getClipboardElementToNormalState);
+}
 
 function extractVideoId (jwURL) {
   const isFromShare = jwURL.includes("lank=");
@@ -144,3 +146,16 @@ function toggleErrorMessage (active) {
   }
   else $error.classList.remove('is-active');
 }
+
+$saerchInput.addEventListener("focus", () => {
+  $searchInput.onkeydown = (event) => {
+    stop(event);
+    
+    const key = event.key.toLowerCase();
+    if (key === "enter") hanldeSearchClick();
+   };
+});
+
+$searchInput.addEventListener("blur", () => {
+  $saerchInput.onkeydown = null;
+})
