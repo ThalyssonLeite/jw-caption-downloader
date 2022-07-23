@@ -43,8 +43,9 @@ $searchButton.addEventListener('click', async (e) => {
   
     renderCaptionResult(formatedCaption);    
   } catch (error) {
+    $loading.style.display = "none";
     toggleErrorMessage(true);
-    console.log(error)
+    console.log(error);
   }
 });
 
@@ -57,8 +58,15 @@ function extractVideoId (jwURL) {
 }
 
 async function extractLanguageCode (jwURL) {
-  const regexToExtractLanguageLocale = /jw.org\/(.+?)\//;
-  const languageLocale =  jwURL.match(regexToExtractLanguageLocale)[1];
+  const regexToLanguageLocaleFromWebsite = /jw.org\/(.+?)\//;
+  const regexToLanguageLocaleFromApp = /locale=(.+?)\&/;
+  let languageLocale; 
+
+  try { 
+    languageLocale = jwURL.match(regexToLanguageLocaleFromWebsite)[1]; 
+  } catch(e) { 
+    languageLocale = jwURL.match(regexToLanguageLocaleFromApp)[1];
+  };
 
   const languagesCollection = await fetch(`https://b.jw-cdn.org/apis/mediator/v1/languages/E/all`)
     .then(res => res.json())
