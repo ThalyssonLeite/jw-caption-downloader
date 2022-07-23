@@ -24,13 +24,13 @@ $searchInput.addEventListener('keydown', (e) => {
   }, 100)
 })
 
-$searchButton.addEventListener('click', hanldeSearchClick);
+$searchButton.addEventListener('click', handleSearchClick);
 
 $clipboard.addEventListener('click', copyToClipboard);
 
 $clipboard.addEventListener('mouseleave', getClipboardElementToNormalState);
 
-async function hanldeSearchClick (event) {
+async function handleSearchClick (event) {
   stop(event);
 
   $captionResult.style.display = "none";
@@ -149,13 +149,13 @@ function toggleErrorMessage (active) {
 
 $searchInput.addEventListener("focus", () => {
   $searchInput.onkeydown = (event) => {
-    stop(event);
-    
     const key = event.key.toLowerCase();
-    if (key === "enter") hanldeSearchClick();
+    const userPressedEnter = key === "enter";
+    
+    if (userPressedEnter) handleSearchClick(event);
    };
 });
 
 $searchInput.addEventListener("blur", () => {
-  $saerchInput.onkeydown = null;
+  $searchInput.onkeydown = null;
 })
