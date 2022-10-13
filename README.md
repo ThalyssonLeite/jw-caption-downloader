@@ -16,10 +16,16 @@
 - [x] <b style="font-size: 12px">HTML</b>
 - [X] <b style="font-size: 12px">CSS</b>
 - [x] <b style="font-size: 12px">Javascript</b>
+- [x] <b style="font-size: 12px">NodeJS</b>
+---
 
-<small>*Não havia necessidade de usar framework num projeto tão pequeno</small>
+### <b>Requisitos</b>
+
+- [x] <b style="font-size: 12px"><a href="https://nodejs.org/dist/v16.18.0/node-v16.18.0-x64.msi">Instale o NodeJS</a> antes de cliclar no arquivo `.bat`</b>
 
 ---
+
+
 ### <b>Features</b>
 
 - [X] <b style="font-size: 12px"><i>Pesquisa fácil por link</i></b>
