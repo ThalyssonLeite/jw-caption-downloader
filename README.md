@@ -5,6 +5,7 @@
 <p align="center">
     <a href="#tecnologias">Tecnologias</a> •
     <a href="#features">Features</a> •
+    <a href="#requisitos-e-instruções">Requisitos e Instruções</a> •
     <a href="#demo">Demo</a> •
     <a href="#author">Author</a>
 </p>
