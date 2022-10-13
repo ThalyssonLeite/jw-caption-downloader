@@ -19,9 +19,10 @@
 - [x] <b style="font-size: 12px">NodeJS</b>
 ---
 
-### <b>Requisitos</b>
+### <b>Requisitos e Instruções</b>
 
-- [x] <b style="font-size: 12px"><a href="https://nodejs.org/dist/v16.18.0/node-v16.18.0-x64.msi">Instale o NodeJS</a> antes de cliclar no arquivo `.bat`</b>
+- [x] <b style="font-size: 12px"><a href="https://nodejs.org/dist/v16.18.0/node-v16.18.0-x64.msi">Instale o NodeJS</a> antes de cliclar no arquivo `Iniciar Baixador.bat`</b>
+- [x] <b style="font-size: 12px">Dê 2 cliques no arquivo `Iniciar Baixador.bat` e ele deve iniciar</b>
 
 ---
 
