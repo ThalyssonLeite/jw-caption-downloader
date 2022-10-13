@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JW Caption Downloader</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.svg">
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js" defer></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="icons.css">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <div class="title">
+      <h1 class="title__text">Baixador de Legendas JW</h1>
+    </div>
+    <h3 class="subtitle">
+      Este site tem por objetivo exclusivo ajudar você a conseguir a transcrição de vídeos do JW para uso pessoal.<br>
+      <i>(i.e., como anotar uma ilustração interessante que você viu sem precisar ficar pausando o vídeo a cada frase)</i></small>
+    </h3>
+
+    <div class="search-bar">
+      <input class="search-bar__input" placeholder="URL de vídeo do JW.ORG">
+      <button class="search-bar__button">Extrair legenda</button>
+
+      <div class="error">*Não foi possível encontrar uma <b>legenda</b> do JW nessa URL</div>
+    </div>
+
+    <i class="loading loading-gear-icon"></i>
+
+    <div class="caption-result">
+      <div class="caption-result__title"></div>
+      <div class="caption-result__duration"></div>
+
+      <div class="clipboard">
+        <div class="clipboard__before">Copiar</div>
+        <div class="clipboard__after">Legenda copiada!</div>
+        <i class="clipboard-icon clipboard__icon"></i>
+      </div>
+
+      <div class="caption-result__text"></div>
+    </div>
+  </div>
+</body>
+</html>
