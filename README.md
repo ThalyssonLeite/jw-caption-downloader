@@ -2,9 +2,6 @@
 
 <p align="center">Este pequeno site tem por objetivo exclusivo ajudar você a conseguir a transcrição de vídeos do JW para uso pessoal</p>
 
-<strong><p align="center"><a href="https://jw-caption.vercel.app/">Experimente o site no ar</a></p></strong>
-<strong><p align="center"><a href="https://jw-caption.vercel.app/">See the website online</a></p></strong>
-
 <p align="center">
     <a href="#tecnologias">Tecnologias</a> •
     <a href="#features">Features</a> •
