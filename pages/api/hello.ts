@@ -15,6 +15,8 @@ export default async (
 
     const jwHTML = await axios.get(jwURL).then(response => response.data);
 
+    console.log('Passei aqui 3')
+
     res.status(200).json({html: jwHTML, url: jwURL});
   } catch (error) {
     res.status(404).end(null);
