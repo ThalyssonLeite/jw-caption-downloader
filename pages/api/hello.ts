@@ -13,11 +13,11 @@ export default async (
 
     console.log('Passei aqui 2')
 
-    const jwHTML = await axios.get(jwURL).then(response => response.data);
+    // const jwHTML = await axios.get(jwURL).then(response => response.data);
 
     console.log('Passei aqui 3')
 
-    res.status(200).json({html: jwHTML, url: jwURL});
+    res.status(200).json({html: 'p', url: jwURL});
   } catch (error) {
     console.log(error)
     res.status(404).end(null);
