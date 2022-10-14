@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import React from 'react';
-import htmlResponseHandler from './htmlResponseController';
+import htmlResponseHandler from '../libs/htmlResponseController';
 
 export default function Home () {
   const $searchInput: any = React.useRef();
