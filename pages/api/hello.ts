@@ -6,9 +6,12 @@ export default async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  try {
+    console.log('Passei aqui 1')
+    try {
     const jwLink: any = req.query.link || '';
     const jwURL = 'https://www.jw.org/'+decodeURIComponent(jwLink);
+
+    console.log('Passei aqui 2')
 
     const jwHTML = await axios.get(jwURL).then(response => response.data);
 
