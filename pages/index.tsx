@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import React from 'react';
+import htmlResponseHandler from './htmlResponseController';
 
 export default function Home () {
   const $searchInput: any = React.useRef();
@@ -56,8 +57,9 @@ export default function Home () {
   
     try {
       const captionResult = await fetch('/api/hello?link='+preparedJWLinkToFetch).then(response => response.json());
-  
-      renderCaptionResult(captionResult);
+      const processedHTML = await htmlResponseHandler(captionResult);
+
+      renderCaptionResult(processedHTML);
     } catch (error) {
       //Making Loading disappear
       $loading.current.style.display = "none";
