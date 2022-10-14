@@ -14,10 +14,7 @@
 
 ### <b>Tecnologias</b>
 
-- [x] <b style="font-size: 12px">HTML</b>
-- [X] <b style="font-size: 12px">CSS</b>
-- [x] <b style="font-size: 12px">Javascript</b>
-- [x] <b style="font-size: 12px">NodeJS</b>
+- [x] <b style="font-size: 12px"><a href="https://nextjs.org/">Next.js</a></b>
 ---
 
 ### <b>Requisitos e Instruções</b>
