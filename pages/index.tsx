@@ -55,7 +55,7 @@ export default function Home () {
     const preparedJWLinkToFetch = encodeURIComponent(jwURL.split('www.jw.org/').pop());
   
     try {
-      const captionResult = await fetch('http://localhost:3000/api/hello?link='+preparedJWLinkToFetch).then(response => response.json());
+      const captionResult = await fetch('/api/hello?link='+preparedJWLinkToFetch).then(response => response.json());
   
       renderCaptionResult(captionResult);
     } catch (error) {
