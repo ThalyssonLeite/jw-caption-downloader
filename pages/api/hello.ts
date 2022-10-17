@@ -14,7 +14,6 @@ export default async (
 
     res.status(200).json({html: jwHTML, url: jwURL});
   } catch (error) {
-    console.log(error)
     res.status(404).end(null);
   }
 };
