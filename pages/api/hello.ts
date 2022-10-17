@@ -17,7 +17,3 @@ export default async (
     res.status(404).end(null);
   }
 };
-
-export const config = {
-  runtime: 'experimental-edge'
-};
