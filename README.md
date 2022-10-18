@@ -10,8 +10,6 @@
     <a href="#author">Author</a>
 </p>
 
----
-
 ### <b>Tecnologias</b>
 
 - [x] <b style="font-size: 12px"><a href="https://nextjs.org/">Next.js</a></b>
